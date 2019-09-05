@@ -1,0 +1,10 @@
+{
+    "repo_name": "Jarvis",
+    "project_name": "jarvis",
+    "country_language_name": "Thai",
+    "country_language_code": "th",
+    "_copy_without_render": [
+        "templates/*",
+        "account/communication/utils.py"
+    ]
+}
