@@ -1,0 +1,7 @@
+django-debug-toolbar
+flake8
+flake8-commas  # enforce trailing commas
+flake8-isort
+isort
+pdbpp
+pre-commit

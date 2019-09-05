@@ -1,0 +1,87 @@
+*.py[co]
+*.pyj-cached
+
+# Packages
+*.egg
+*.egg-info
+dist
+persist.db
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+logs/
+*.log
+
+# Unit test / coverage reports
+.coverage
+.tox
+.log
+.idea
+.DS_Store
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+#virtual env folder
+envproj*
+env
+proj
+.virtualenv
+.env
+
+*/envdir
+base/notebooks/*
+
+dump/
+media/
+static_root/
+base/kick
+JHOL_FIX
+assets
+
+#special files
+ignore*
+node_modules
+Pipfile
+test-docker-compose.yml
+testmakefile
+
+#sublime swap files
+.subl*
+
+#secret files
+secret.txt
+
+#pyenv/virtualenv stuff
+.python-version
+
+*.swp
+
+# py.test
+*.cache/
+*__pycache__/
+htmlcov/
+
+# vagrant
+.vagrant/
+.vscode/
+
+# django local settings
+*local_settings.py
+
+# git submodules
+.gitmodules
+
+# floobits
+.floo*

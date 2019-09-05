@@ -1,0 +1,7 @@
+mixin disclaimer(text, name, action_ok=true, action_ok_url='')
+	section.position-fixed.bg-white(id=name)
+		.disclaimer-wrapper.d-flex.p-2.jv--tile
+			div.mr-auto= text
+			form(method='POST', action=action_ok_url)
+				- csrf_token
+				+jv_button(text=_('okay'), text_list=null, type='submit', size='medium', classes='bg-white rounded border-2 mt-3')

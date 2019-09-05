@@ -1,0 +1,38 @@
+repos:
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v2.2.1
+    hooks:
+    -   id: trailing-whitespace
+        exclude: \.(css|ts|tsx|bck|csv)$
+    -   id: check-merge-conflict
+    -   id: check-json
+    -   id: debug-statements
+    -   id: check-added-large-files
+        args: [--maxkb=500]
+    -   id: flake8
+        exclude: (tests/.*|.*/migrations/.*\.py|.*/custom_dictionaries.py)$
+    -   id: debug-statements
+    -   id: requirements-txt-fixer
+    -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+        args: [--fix=lf]
+    -   id: no-commit-to-branch
+        args: [--branch, production, --branch, master, --pattern, .*-stg]
+-   repo: local
+    hooks:
+    -   id: isort
+        name: Sorting Imports
+        entry: isort
+        language: system
+        args: ["-y"]
+        files: \.py$
+        exclude: (.*/scripts/.*|.*/migrations/.*)$
+        requirements: true
+    -   id: eclint
+        name: EditorConfig file validation
+        description: Uses ECLint for validating or fixing code that doesn't adhere to settings defined in .editorconfig
+        language: node
+        additional_dependencies: [eclint]
+        entry: eclint
+        args: [check]
+        exclude: (.*/scripts/.*|.*/migrations/.*)$

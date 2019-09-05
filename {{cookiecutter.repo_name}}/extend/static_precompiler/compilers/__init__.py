@@ -1,0 +1,1 @@
+from .coffeescript import *  # noqa
