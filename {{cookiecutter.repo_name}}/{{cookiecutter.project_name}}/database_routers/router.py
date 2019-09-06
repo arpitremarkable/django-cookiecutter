@@ -11,7 +11,7 @@ example:
             'ga_app',
         ),
         'pii': (
-            'accounts',
+            'data_store',
         ),
     }
 """

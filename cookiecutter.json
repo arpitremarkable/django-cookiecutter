@@ -4,7 +4,6 @@
     "country_language_name": "Thai",
     "country_language_code": "th",
     "_copy_without_render": [
-        "templates/*",
-        "account/communication/utils.py"
+        "templates/*"
     ]
 }
