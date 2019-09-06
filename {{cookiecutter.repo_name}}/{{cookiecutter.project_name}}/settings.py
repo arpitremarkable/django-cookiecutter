@@ -44,14 +44,14 @@ INSTALLED_APPS = [
     'data_store',
     'django.contrib.postgres',
     'rosetta',
-    'analytics',  # optional,
+    # 'analytics',  # optional,
     'common',
     'payment',
 ]
 
 
 MIDDLEWARE = [
-    'analytics.middleware.VisitorTrackingMiddleware',
+    # 'analytics.middleware.VisitorTrackingMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -104,14 +104,14 @@ WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 
 DATABASES = {}
 
-DB_APP_ROUTER = {
-    'analytics': (
-        'analytics',
-    ),
-    'pii': (
-        'payment',
-    ),
-}
+# DB_APP_ROUTER = {
+#     'analytics': (
+#         'analytics',
+#     ),
+#     'pii': (
+#         'payment',
+#     ),
+# }
 
 ALLOW_DATABASE_UNION = False
 
