@@ -17,7 +17,7 @@ pip install -r requirements.txt -r requirements-dev.txt
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
-Then visit and login at [Admin page](http://localhost:8000/en/jarvis/)
+Then visit and login at Admin page - http://localhost:8000/project_name/
 
 # Create new app
 ```
