@@ -1,3 +1,5 @@
+import base64
+import json
 from abc import ABC, abstractproperty
 
 from django.shortcuts import get_object_or_404
@@ -35,13 +37,37 @@ class DataStoreFormViewMixin(ABC):
         return kwargs
 
     def get_initial(self):
-        """
-        Use data from data_store.data to prefill the form
-        TODO: Check if data in data store is still valid for the current form
-        """
+        #     """
+        #     Use data from data_store.data to prefill the form
+        #     TODO: Check if data in data store is still valid for the current form
+        #     """
         initial = super().get_initial()
+        initial.update(self._get_initial_data_from_request())
         initial.update(self.get_instance().data)
         return initial
+
+    def _get_initial_data_from_request(self):
+        initial_data = base64.urlsafe_b64decode(self.request.GET.get('initial_data', ''))
+        initial_data_cookie = self.request.COOKIES.get('initial_data')
+
+        if initial_data:
+            try:
+                return json.loads(initial_data)
+            except json.JSONDecodeError:
+                return {}
+        elif initial_data_cookie is not None:
+            try:
+                return json.loads(base64.urlsafe_b64decode(initial_data_cookie))
+            except json.JSONDecodeError:
+                return {}
+        elif 'initial_data' in self.request.session:
+            initial_data = self.request.session['initial_data']
+            try:
+                return json.loads(json.dumps(initial_data))
+            except json.JSONDecodeError:
+                return {}
+        else:
+            return {}
 
     def form_valid(self, form):
         form.save()

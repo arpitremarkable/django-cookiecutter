@@ -6,17 +6,20 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 
 # third party
+from {{cookiecutter.project_name}}.middleware.request import get_request
 from model_utils import FieldTracker
 from model_utils.models import TimeStampedModel
-from {{cookiecutter.project_name}}.middleware.request import get_request
 
 
 class DataStoreManager(models.Manager):
 
+    def get_request(self):
+        return get_request()
+
     def get_queryset(self):
-        request = get_request()
+        request = self.get_request()
         qs = super(DataStoreManager, self).get_queryset()
-        if request and not request.user.is_superuser:
+        if request and not (request.user.is_superuser or request.user.is_staff):
             session_object = request.session._get_session_from_db()
             if session_object:
                 ContentType.objects.get_for_model(session_object._meta.model)
