@@ -1,2 +1,2 @@
-# polo
-Reusable python packages
+# {{cookiecutter.project_name}}
+{{cookiecutter.project_name}}

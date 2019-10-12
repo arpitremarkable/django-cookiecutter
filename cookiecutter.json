@@ -1,6 +1,7 @@
 {
     "project_dest": "Jarvis",
     "project_name": "jarvis",
+    "project_description": "Reusable python packages",
     "country_language_name": "Thai",
     "country_language_code": "th",
 

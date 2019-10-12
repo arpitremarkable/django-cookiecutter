@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
-{% if cookiecutter.feature_multilang == 'y' %}
+{%- if cookiecutter.feature_multilang == 'y' %}
 from django.conf.urls.i18n import i18n_patterns
 {% endif %}
 from django.conf.urls.static import static
