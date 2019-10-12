@@ -8,6 +8,7 @@ git clone git@github.com:futureadybroker/django-cookiecutter.git /tmp/django-coo
 
 mkdir <project_name>
 scaraplate rollup /tmp/django-cookiecutter <project_name>
+rm -rf /tmp/django-cookiecutter
 
 cd <project_name>
 mkvirtualenv <project_name> -p python3.7
