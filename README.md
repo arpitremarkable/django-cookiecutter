@@ -3,8 +3,11 @@ Cookiecutter for django (only aegon projects)
 
 # Setup
 ```
-pip3 install cookiecutter virtualenvwrapper
-cookiecutter git@github.com:futureadybroker/django-cookiecutter.git
+pip3 install cookiecutter scaraplate virtualenvwrapper
+git clone git@github.com:futureadybroker/django-cookiecutter.git /tmp/django-cookiecutter
+
+mkdir <project_name>
+scaraplate rollup /tmp/django-cookiecutter <project_name>
 
 cd <project_name>
 mkvirtualenv <project_name> -p python3.7
