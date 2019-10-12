@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+{% if cookiecutter.feature_multilang == 'y' %}
 from django.conf.urls.i18n import i18n_patterns
+{% endif %}
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -29,13 +31,10 @@ urlpatterns = [
     path('watchman/bare-status/', bare_status),
 ]
 
-urlpatterns += i18n_patterns(
+urlpatterns += {{ 'i18n_patterns' if cookiecutter.feature_multilang == 'y' else '[' }}
     path('{{cookiecutter.project_name}}/', admin.site.urls),
-)
-
-urlpatterns += i18n_patterns(
     path('insurance/', include('insurance.urls', namespace='insurance')),
-)
+{{ '(' if cookiecutter.feature_multilang == 'y' else ']' }}
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

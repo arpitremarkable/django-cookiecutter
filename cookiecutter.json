@@ -3,6 +3,9 @@
     "project_name": "jarvis",
     "country_language_name": "Thai",
     "country_language_code": "th",
+
+    "feature_multilang": "Support multiple languages [y/n]",
+
     "_copy_without_render": [
         "templates/*"
     ]

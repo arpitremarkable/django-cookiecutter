@@ -34,7 +34,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    {% if cookiecutter.feature_multilang == 'y' %}
     'modeltranslation',  # need to be before django.contrib.admin
+    {% endif %}
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'data_store',
     'django.contrib.postgres',
+    {% if cookiecutter.feature_multilang == 'y' %}
     'rosetta',
+    {% endif %}
     # 'analytics',  # optional,
     'common',
     'payment',
@@ -81,6 +85,7 @@ TEMPLATES = [
     },
 ]
 
+{% if cookiecutter.feature_multilang == 'y' %}
 # i18n code start
 LANGUAGE_CODE = 'en'
 MODELTRANSLATION_DEFAULT_LANGUAGE = MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
@@ -95,6 +100,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'th')
 
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
 # i18n code end
+{% endif %}
 
 WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 
@@ -145,9 +151,11 @@ LOGIN_URL = 'admin:login'
 
 TIME_ZONE = 'UTC'
 
+{% if cookiecutter.feature_multilang == 'y' %}
 USE_I18N = True
 
 USE_L10N = True
+{% endif %}
 
 FORMAT_MODULE_PATH = [
     '{{cookiecutter.project_name}}.formats',

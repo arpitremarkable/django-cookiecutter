@@ -2,7 +2,9 @@ from django.apps import apps
 from django.conf import settings
 from django.urls import resolve, reverse
 from django.utils import formats
+{% if cookiecutter.feature_multilang == 'y' %}
 from django.utils.translation import activate, get_language
+{% endif %}
 
 
 def django_settings(request):
@@ -11,6 +13,7 @@ def django_settings(request):
     }
 
 
+{% if cookiecutter.feature_multilang == 'y' %}
 def change_language(request):
     def change_language_func(lang, path=None):
         """
@@ -33,7 +36,6 @@ def change_language(request):
         'change_language': change_language_func,
     }
 
-
 def interpolate_language_code(request):
     def interpolate(string):
         """
@@ -43,6 +45,7 @@ def interpolate_language_code(request):
     return {
         'l': interpolate,
     }
+{% endif %}
 
 
 def misc(request):

@@ -16,6 +16,7 @@ class GetFieldMixin(object):
         return return_val
 
 
+{% if cookiecutter.feature_multilang == 'y' %}
 class LanguageSwitchableFormMixin(object):
     '''
         Input params:
@@ -35,3 +36,4 @@ class LanguageSwitchableFormMixin(object):
 
     def get_current_language(self):
         return self._current_language
+{% endif %}
