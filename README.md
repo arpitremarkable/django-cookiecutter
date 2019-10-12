@@ -6,22 +6,22 @@ Cookiecutter for django (only aegon projects)
 pip3 install cookiecutter scaraplate virtualenvwrapper
 git clone git@github.com:futureadybroker/django-cookiecutter.git /tmp/django-cookiecutter
 
-mkdir <project_name>
-scaraplate rollup /tmp/django-cookiecutter <project_name>
+PROJECT_NAME=<project_name>
+scaraplate rollup /tmp/django-cookiecutter $PROJECT_NAME
 rm -rf /tmp/django-cookiecutter
 
-cd <project_name>
-mkvirtualenv <project_name> -p python3.7
+cd $PROJECT_NAME
+mkvirtualenv $PROJECT_NAME -p python3.7
 ```
 # Start
 ```
-workon <project_name>
+workon $PROJECT_NAME
 pip install -r requirements.txt -r requirements-dev.txt
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
-Then visit and login at Admin page - http://localhost:8000/project_name/
+Then visit and login at Admin page - http://localhost:8000/PROJECT_NAME/
 
 # Create new app
 ```
