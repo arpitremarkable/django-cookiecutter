@@ -2,7 +2,7 @@ from django.apps import apps
 from django.conf import settings
 from django.urls import resolve, reverse
 from django.utils import formats
-{%- if cookiecutter.feature_multilang == 'y' %}
+{%- if cookiecutter.feature_i18n == 'y' %}
 from django.utils.translation import activate, get_language
 {% endif %}
 
@@ -13,7 +13,7 @@ def django_settings(request):
     }
 
 
-{%- if cookiecutter.feature_multilang == 'y' %}
+{%- if cookiecutter.feature_i18n == 'y' %}
 def change_language(request):
     def change_language_func(lang, path=None):
         """

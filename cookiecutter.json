@@ -5,7 +5,9 @@
     "country_language_name": "Thai",
     "country_language_code": "th",
 
-    "feature_multilang": "Support multiple languages [y/n]",
+    "feature_i18n": "Support multiple languages [y/n]",
+
+    "app_payment": "Add payment app",
 
     "_copy_without_render": [
         "templates/*"

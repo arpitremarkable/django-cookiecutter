@@ -2,8 +2,10 @@ Django
 django-countries  # analytics
 django-ipware  # analytics
 django-model-utils  # required by data_store app
+{%- if cookiecutter.feature_i18n == 'y' %}
 django-modeltranslation # application is used to translate dynamic content of existing Django model fields
 django-rosetta  # application that eases the translation process
+{% endif %}
 django-watchman
 geoip2  # analytics
 psycopg2-binary
