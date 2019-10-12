@@ -7,7 +7,12 @@ pip3 install cookiecutter scaraplate virtualenvwrapper
 git clone git@github.com:futureadybroker/django-cookiecutter.git /tmp/django-cookiecutter
 
 PROJECT_NAME=<project_name>
+
+# New project
 scaraplate rollup /tmp/django-cookiecutter $PROJECT_NAME
+# Existing project
+scaraplate rollup /tmp/django-cookiecutter $PROJECT_NAME --no-input
+
 rm -rf /tmp/django-cookiecutter
 
 cd $PROJECT_NAME
