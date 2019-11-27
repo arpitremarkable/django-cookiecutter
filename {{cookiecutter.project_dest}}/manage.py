@@ -3,7 +3,7 @@
 import os
 import sys
 
-# third party	
+# third party
 from dotenv import load_dotenv
 
 
