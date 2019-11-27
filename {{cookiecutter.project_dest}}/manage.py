@@ -3,6 +3,10 @@
 import os
 import sys
 
+# third party	
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', {{cookiecutter.project_name}}.settings')
