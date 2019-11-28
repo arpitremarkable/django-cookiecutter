@@ -10,6 +10,10 @@ def remove(filepath):
         shutil.rmtree(filepath)
 
 app_payment = '{{cookiecutter.app_payment}}' == 'y'
+app_data_store = '{{cookiecutter.app_data_store}}' == 'y'
 
 if not app_payment:
     remove('payment')
+
+if not app_data_store:
+    remove('data_store')

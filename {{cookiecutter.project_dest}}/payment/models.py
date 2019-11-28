@@ -4,7 +4,7 @@ from django.db import models
 # third party
 from common.models import TimeTrackedModel
 
-from data_store.forms import DjangoQuerysetJSONEncoder
+from common.forms import DjangoQuerysetJSONEncoder
 
 
 class PaymentGateway(TimeTrackedModel):

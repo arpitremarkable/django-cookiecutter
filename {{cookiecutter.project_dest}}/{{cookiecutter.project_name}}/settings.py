@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    {%- if cookiecutter.app_data_store == 'y' %}
     'data_store',
+    {%- endif %}
     'django.contrib.postgres',
     {%- if cookiecutter.feature_i18n == 'y' %}
     'rosetta',

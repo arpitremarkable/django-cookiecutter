@@ -2,40 +2,8 @@ import json
 from abc import ABCMeta, abstractproperty
 
 from django import forms
-from django.core.serializers.json import DjangoJSONEncoder
-from django.db import models
-from django.db.models.query import (
-    FlatValuesListIterable, QuerySet, ValuesIterable, ValuesListIterable,
-)
-from django.utils.functional import LazyObject, empty
 
-
-class DjangoQuerysetJSONEncoder(DjangoJSONEncoder):
-    def default(self, value):
-        if isinstance(value, LazyObject):
-            if value._wrapped is empty:
-                value._setup()
-            return value._wrapped
-
-        if isinstance(value, QuerySet):
-            # Couldn't find a way without using private variables
-            if value._iterable_class in (ValuesIterable,
-                                         ValuesListIterable,
-                                         FlatValuesListIterable):
-                return [v for v in value]
-            else:
-                return [self.default(v) for v in value]
-        elif isinstance(value, models.Model):
-            d = {
-                'pk': value.pk,
-                'app_label': value._meta.app_label,
-                'model_name': value._meta.model_name,
-                'str': str(value),
-            }
-            if hasattr(value, 'natural_key'):
-                d.update({'natural': value.natural_key()})
-            return d
-        return super(DjangoQuerysetJSONEncoder, self).default(value)
+from common.forms.DjangoQuerysetJSONEncoder
 
 
 class DataStoreMeta(ABCMeta, forms.forms.DeclarativeFieldsMetaclass):

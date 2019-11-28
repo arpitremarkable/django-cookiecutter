@@ -7,7 +7,8 @@
 
     "feature_i18n": "Support multiple languages [y/n]",
 
-    "app_payment": "Add payment app",
+    "app_payment [y/n]": "Add payment app",
+    "app_data_store [y/n]": "Add data store app (say 'y' if you want to store PII data or user forms",
 
     "_copy_without_render": [
         "templates/*"
