@@ -192,8 +192,4 @@ STATICFILES_FINDERS = (
 
 DATE_FORMAT = "j M Y"
 
-FORMAT_MODULE_PATH = [
-    '{{cookiecutter.project_name}}.formats',
-]
-
 TRACK_PAGEVIEWS = True  # Track WebEvents
