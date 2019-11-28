@@ -39,8 +39,8 @@ urlpatterns += {{ 'i18n_patterns' if cookiecutter.feature_i18n == 'y' else '[' }
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "{{cookiecutter.project_name}} Administration"
-admin.site.site_title = "{{cookiecutter.project_name}} Administration"
+admin.site.site_header = "{{cookiecutter.project_name|title}} Administration"
+admin.site.site_title = "{{cookiecutter.project_name|title}} Administration"
 
 if settings.DEBUG:
     try:
