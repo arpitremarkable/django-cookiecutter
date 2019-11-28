@@ -6,9 +6,9 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 
 # third party
-from {{cookiecutter.project_name}}.middleware.request import get_request
 from model_utils import FieldTracker
 from model_utils.models import TimeStampedModel
+from {{cookiecutter.project_name}}.middleware.request import get_request
 
 
 class DataStoreManager(models.Manager):

@@ -2,9 +2,8 @@ from django.contrib.postgres import fields as pg_fields
 from django.db import models
 
 # third party
-from common.models import TimeTrackedModel
-
 from common.forms import DjangoQuerysetJSONEncoder
+from common.models import TimeTrackedModel
 
 
 class PaymentGateway(TimeTrackedModel):

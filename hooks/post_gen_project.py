@@ -1,6 +1,7 @@
 import os
 import shutil
 
+
 print('CWD', os.getcwd())  # prints /absolute/path/to/{{cookiecutter.project_dest}}
 
 def remove(filepath):

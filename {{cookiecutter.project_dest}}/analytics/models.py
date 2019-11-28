@@ -6,11 +6,10 @@ from django.db import models
 from django.utils import timezone
 
 # third party
+from common.forms import DjangoQuerysetJSONEncoder
 from django_countries.fields import CountryField
 # GEOIP_CACHE_TYPE = getattr(settings, 'GEOIP_CACHE_TYPE', 4)
 from model_utils import Choices
-
-from common.forms import DjangoQuerysetJSONEncoder
 
 
 # from analytics.settings import TRACK_USING_GEOIP

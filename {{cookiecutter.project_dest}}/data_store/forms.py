@@ -3,8 +3,6 @@ from abc import ABCMeta, abstractproperty
 
 from django import forms
 
-from common.forms.DjangoQuerysetJSONEncoder
-
 
 class DataStoreMeta(ABCMeta, forms.forms.DeclarativeFieldsMetaclass):
     pass
