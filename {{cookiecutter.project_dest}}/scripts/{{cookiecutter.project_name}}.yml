@@ -1,6 +1,6 @@
-# ~/.tmuxinator/aegon.yml
+# ~/.tmuxinator/{{cookiecutter.project_name}}.yml
 
-name: aegon
+name: {{cookiecutter.project_name}}
 root: .
 
 # Optional tmux socket
@@ -41,7 +41,7 @@ startup_window: server
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t aegon
+# post: tmux -CC attach -t {{cookiecutter.project_name}}
 
 windows:
   - codedir:
@@ -59,4 +59,3 @@ windows:
       layout: main-vertical
       panes:
         - python manage.py runserver_plus 0.0.0.0:8000
-        - cd ../2c2p-securepay-portal && php -S localhost:8001
