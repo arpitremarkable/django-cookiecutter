@@ -1,7 +1,7 @@
 """{{cookiecutter.project_name}} URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -39,8 +39,8 @@ urlpatterns += {{ 'i18n_patterns' if cookiecutter.feature_i18n == 'y' else '[' }
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "Aegon Direct Administration"
-admin.site.site_title = "Aegon Direct Administration"
+admin.site.site_header = "{{cookiecutter.project_name}} Administration"
+admin.site.site_title = "{{cookiecutter.project_name}} Administration"
 
 if settings.DEBUG:
     try:
