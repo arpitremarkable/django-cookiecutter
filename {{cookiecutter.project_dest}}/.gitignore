@@ -67,3 +67,4 @@ static_root/
 test-docker-compose.yml
 testmakefile
 var
+*.sqlite*
