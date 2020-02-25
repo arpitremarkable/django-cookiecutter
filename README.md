@@ -19,7 +19,7 @@ scaraplate rollup /tmp/django-cookiecutter $PROJECT_NAME --no-input
 rm -rf /tmp/django-cookiecutter
 
 cd $PROJECT_NAME
-mkvirtualenv $PROJECT_NAME -p python3.7
+mkvirtualenv $PROJECT_NAME -p python3.8
 ```
 # Start
 ```
