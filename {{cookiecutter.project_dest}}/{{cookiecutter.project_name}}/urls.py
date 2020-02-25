@@ -26,7 +26,9 @@ from watchman.views import bare_status
 
 
 urlpatterns = [
+    {%- if cookiecutter.feature_i18n == 'y' %}
     path('{{cookiecutter.project_name}}/i18n/', include('rosetta.urls')),
+    {%- endif %}
     path('watchman/', include('watchman.urls')),
     path('watchman/bare-status/', bare_status),
 ]
