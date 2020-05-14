@@ -20,12 +20,14 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic.base import RedirectView
 
 # third party
 from watchman.views import bare_status
 
 
 urlpatterns = [
+    path('', RedirectView.as_view(pattern_name='admin:index')),
     {%- if cookiecutter.feature_i18n == 'y' %}
     path('{{cookiecutter.project_name}}/i18n/', include('rosetta.urls')),
     {%- endif %}
