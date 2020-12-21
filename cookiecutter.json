@@ -1,9 +1,9 @@
 {
-    "project_dest": "Jarvis",
-    "project_name": "jarvis",
+    "project_dest": "Demo",
+    "project_name": "demo",
     "project_description": "Reusable python packages",
-    "country_language_name": "Thai",
-    "country_language_code": "th",
+    "country_language_name": "English",
+    "country_language_code": "en",
 
     "feature_i18n": "Support multiple languages [y/n]",
 

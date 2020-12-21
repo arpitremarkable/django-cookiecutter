@@ -50,9 +50,9 @@ def interpolate_language_code(request):
 
 def misc(request):
     app_names = request.resolver_match.app_names
-    if 'insurance.travel' in app_names:
+    if 'domain.travel' in app_names:
         category = 'travel'
-    elif 'insurance.car' in app_names:
+    elif 'domain.car' in app_names:
         category = 'car'
     else:
         category = settings.DEFAULT_CATEGORY

@@ -1,5 +1,5 @@
 # django-cookiecutter
-Cookiecutter for django (only aegon projects)
+Cookiecutter for django (only example projects)
 
 # Setup
 ```
@@ -7,7 +7,7 @@ pip3 install cookiecutter scaraplate virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-git clone git@github.com:futureadybroker/django-cookiecutter.git /tmp/django-cookiecutter
+git clone git@github.com:arpitremarkable/django-cookiecutter.git /tmp/django-cookiecutter
 
 PROJECT_NAME=<project_name>
 
@@ -33,24 +33,24 @@ Then visit and login at Admin page - http://localhost:8000/PROJECT_NAME/
 
 # Create new app
 ```
-mkdir insurance/travel
-./manage.py startapp travel insurance/travel
+mkdir domain/travel
+./manage.py startapp travel domain/travel
 ```
 
 Add entry to `INSTALLED_APPS`
 ```
 INSTALLED_APPS = [
     ...
-    'insurance.travel',
+    'domain.travel',
 }
 ```
 
-Add following to `insurance/travel/apps.py`
+Add following to `domain/travel/apps.py`
 ```
 from django.apps import AppConfig
 
 
 class TravelConfig(AppConfig):
-    label = 'travel_insurance'
-    name = 'insurance.travel'
+    label = 'travel_domain'
+    name = 'domain.travel'
 ```

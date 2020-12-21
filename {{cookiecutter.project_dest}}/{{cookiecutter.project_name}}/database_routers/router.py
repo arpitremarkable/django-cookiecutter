@@ -21,8 +21,8 @@ DB_MODEL_ROUTER = getattr(settings, 'DB_MODEL_ROUTER', {})
 example:
     DB_MODEL_ROUTER = {
         'pii': (
-            'travel_insurance_plan.TripDetailFormStore',  # Model._meta.label
-            'travel_insurance_proposal.ProposalFormStore',
+            'travel_domain_plan.TripDetailFormStore',  # Model._meta.label
+            'travel_domain_proposal.ProposalFormStore',
         ),
     }
 """

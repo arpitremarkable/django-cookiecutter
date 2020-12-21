@@ -92,9 +92,9 @@ class PaymentGatewaysView(PaymentGatewayException, ABC):
     def get_payment_url(self, request_data):
         try:
             if settings.DEBUG:
-                token_payment_url = 'https://stg-payment.futuready.com/token'
+                token_payment_url = 'https://stg-payment.example.com/token'
             else:
-                token_payment_url = 'https://payment.futuready.com/token'
+                token_payment_url = 'https://payment.example.com/token'
 
             response = requests.post(token_payment_url, json=request_data)
 

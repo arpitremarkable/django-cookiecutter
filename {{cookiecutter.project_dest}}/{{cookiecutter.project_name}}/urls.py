@@ -37,7 +37,7 @@ urlpatterns = [
 
 urlpatterns += {{ 'i18n_patterns(' if cookiecutter.feature_i18n == 'y' else '[' }}
     path('{{cookiecutter.project_name}}/', admin.site.urls),
-    path('insurance/', include('insurance.urls', namespace='insurance')),
+    path('domain/', include('domain.urls', namespace='domain')),
 {{ ')' if cookiecutter.feature_i18n == 'y' else ']' }}
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
