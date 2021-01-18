@@ -24,7 +24,7 @@ repos:
         name: Sorting Imports
         entry: isort
         language: system
-        args: ["-y"]
+        args: ["--recursive"]
         files: \.py$
         exclude: (.*/scripts/.*|.*/migrations/.*)$
         requirements: true

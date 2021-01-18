@@ -7,6 +7,7 @@ django-model-utils  # required by data_store app and analytics app
 django-modeltranslation # application is used to translate dynamic content of existing Django model fields
 django-rosetta  # application that eases the translation process
 {% endif %}
+django-sql-explorer[xls]
 django-watchman
 geoip2  # analytics
 psycopg2-binary

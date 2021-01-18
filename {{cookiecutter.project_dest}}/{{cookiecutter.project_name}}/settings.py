@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     {%- if cookiecutter.feature_i18n == 'y' %}
     'rosetta',
     {%- endif %}
+    'explorer',
     # 'analytics',  # optional,
     'common',
     {%- if cookiecutter.app_payment == 'y' %}
@@ -113,6 +114,9 @@ WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {}
+
+EXPLORER_CONNECTIONS = { 'Default': 'default' }
+EXPLORER_DEFAULT_CONNECTION = 'default'
 
 # DB_APP_ROUTER = {
 #     'analytics': (
